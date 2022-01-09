@@ -6,7 +6,7 @@ import './assets/style/main.scss';
 import './config/fa.config';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
-
+  
 const appElement = (
   <StrictMode>
     <BrowserRouter>

@@ -2,11 +2,15 @@ import Layout from './Layout';
 import { routes } from './config/routes.config';
 import { MetaInfo, NotFound404 } from './components';
 import { usePageTracker, useScrollToTop } from './hooks';
-import { useLocation, Route, Routes } from 'react-router-dom';
+import { useLocation,  BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { CSSTransition, SwitchTransition } from 'react-transition-group';
 
 import type { FunctionComponent } from 'react';
-
+import ComponentRenderer from 'ComponentRenderer';
+import ThankYouPage from 'ThankYouPage';
+import MainLandingPage from 'MainLandingPage';
+import "tailwindcss/dist/base.css";
+import "styles/globalStyles.css";
 const App: FunctionComponent = () => {
   useScrollToTop();
   usePageTracker();
@@ -35,6 +39,7 @@ const App: FunctionComponent = () => {
               path="*"
               element={<NotFound404 />}
             />
+           
           </Routes>
         </CSSTransition>
       </SwitchTransition>
