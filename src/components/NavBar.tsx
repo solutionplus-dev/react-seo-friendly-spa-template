@@ -2,7 +2,6 @@ import ToggleTheme from './ToggleTheme';
 import { NavLink } from 'react-router-dom';
 import { routes } from '../config/routes.config';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { ReactComponent as ReactSeoLogoSvg } from '../assets/img/ReactSeoLogo.svg';
 
 import type { FunctionComponent } from 'react';
 
@@ -13,15 +12,7 @@ const Navbar: FunctionComponent = () => (
     aria-label="Main navigation"
   >
     <div className="navbar-wrapper">
-      <div className="brand-wrapper">
-        <ReactSeoLogoSvg
-          role="img"
-          height="65"
-          width="167"
-          aria-hidden
-          title="React SEO"
-        />
-      </div>
+     
       <div className="navbar-routes">
         {routes.map(({ path, name }) => (
           <NavLink

@@ -5,6 +5,7 @@ import { css } from "styled-components/macro"; //eslint-disable-line
 
 import Header, { NavLink, NavLinks, PrimaryLink, LogoLink, NavToggle, DesktopNavLinks } from "../headers/light.js";
 import ResponsiveVideoEmbed from "../../helpers/ResponsiveVideoEmbed.js";
+import { routes } from "config/routes.config";  
 
 const StyledHeader = styled(Header)`
   ${tw`pt-8 max-w-none`}
@@ -58,21 +59,19 @@ const StyledResponsiveVideoEmbed = styled(ResponsiveVideoEmbed)`
 export default () => {
   const navLinks = [
     <NavLinks key={1}>
-      <NavLink href="#">
-        About
-      </NavLink>
-      <NavLink href="#">
-        Blog
-      </NavLink>
-      <NavLink href="#">
-        Locations
-      </NavLink>
-      <NavLink href="#">
-        Pricing
-      </NavLink>
+        {routes.map(({ path, name }) => (
+          <NavLink
+          href={path}
+            key={path}
+            className={({ isActive }) => 'navbar-item' + (isActive ? ' is-active' : '')}
+          >
+            <span>{name}</span>
+          </NavLink>
+        ))}
+       
     </NavLinks>,
     <NavLinks key={2}>
-      <PrimaryLink href="/#">
+      <PrimaryLink href="/about">
         Hire Us
       </PrimaryLink>
     </NavLinks>

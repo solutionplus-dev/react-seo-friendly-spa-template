@@ -4,6 +4,7 @@ import type { ComponentType } from 'react';
 import ComponentRenderer from '../ComponentRenderer';
 import ThankYouPage from '../ThankYouPage';
 import MainLandingPage from '../demos/AgencyLandingPage';
+import Resume from '../components/Resume/index';
 
 const DESC_SUFFIX = 'description - length <= 160 chars.';
 
@@ -29,7 +30,7 @@ export const routes: Route[] = [
   {
     path: '/',
     name: 'Home',
-    Component: MainLandingPage,
+    Component: Resume,
     metaInfo: {
       title: 'Home',
       description: `Home ${DESC_SUFFIX}`

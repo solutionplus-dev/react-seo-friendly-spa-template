@@ -5,7 +5,6 @@ import type { FunctionComponent } from 'react';
 
 const Layout: FunctionComponent = ({ children }) => (
   <Fragment>
-    <Navbar />
     {children}
     <BackToTop />
     <Footer />
